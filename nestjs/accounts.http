@@ -1,0 +1,24 @@
+GET http://backend.imersao5.sidartaoss.com/accounts
+
+###
+GET http://localhost:3001/accounts/f082fad9-bc56-4095-9258-e384d06844cb
+
+###
+POST http://backend.imersao5.sidartaoss.com/accounts
+Content-Type: application/json
+
+{
+    "name": "conta 1"
+}
+
+###
+
+PATCH http://localhost:3000/accounts/f082fad9-bc56-4095-9258-e384d06844cb
+Content-Type: application/json
+
+{
+    "name": "conta 2"
+}
+
+###
+DELETE http://localhost:3000/accounts/f082fad9-bc56-4095-9258-e384d06844cb

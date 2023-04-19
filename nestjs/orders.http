@@ -1,0 +1,40 @@
+GET http://backend.sidartaoss.com/orders
+x-token: b19k9qpsr6w
+
+###
+GET http://backend.imersao5.sidartaoss.com/orders/5c3ffed7-3744-46d0-9d1c-d1a0d6175d35
+x-token: hvc2yoabori
+
+###
+POST http://backend.imersao5.sidartaoss.com/orders
+Content-Type: application/json  
+x-token: hvc2yoabori
+
+{
+    "credit_card_number": "5268185503303427",
+    "credit_card_name": "Iris Marks",
+    "credit_card_expiration_month": 8,
+    "credit_card_expiration_year": 2027,
+    "credit_card_cvv": 228,
+    "amount": 884.93
+}
+
+###
+
+PATCH http://localhost:3001/orders/6f712d99-4de9-466e-b495-3d73da3a247b
+Content-Type: application/json
+x-token: tutgoigl1t
+
+{
+    "amount": 30.33,
+    "credit_card_number": "11112222"
+}
+
+###
+DELETE http://localhost:3001/orders/6f712d99-4de9-466e-b495-3d73da3a247b
+x-token: tutgoigl1t
+
+###
+
+DELETE http://backend.imersao5.sidartaoss.com/orders/fd33d4bf-dd23-47aa-8d57-5359bbc1a771
+x-token: hvc2yoabori

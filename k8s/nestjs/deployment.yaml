@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend
+spec:
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+        - name: backend
+          image: sidartasilva/imersao5-backend:changed4
+          envFrom:
+            - secretRef:
+                name: backend
+          ports:
+            - containerPort: 3000

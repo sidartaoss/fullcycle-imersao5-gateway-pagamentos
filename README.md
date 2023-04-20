@@ -25,7 +25,26 @@ Por se tratar de informações sensíveis referentes a uma ordem de pagamento, c
 
 > Em termos de monitoramento, de forma a acompanhar métricas de negócio, como as transações de pagamentos, é possível fazer uso de uma solução como o _Prometheus_ vinculado ao processador _Go_, permitindo visualizar o resultado das métricas em _dashboards_ do _Grafana_.
 
-#### Processador de Transações
+## Tecnologias
+  
+- #### Backend
+  - TypeScript
+  - Nest.js
+  - Apache Kafka
+  - Golang
+  
+- #### SPA (Single Page Application)
+  - TypeScript
+  - Next.js
+  - React.js
+  
+- #### Deploy
+  - Kubernetes no GKE
+  
+- #### Apache Kafka
+  - Serviço gerenciado na Confluent Cloud
+
+### Processador de Transações
 
 A aplicação responsável pelo processamento das transações é desenvolvida em _Go_. E adota um _design_ de Arquitetura Hexagonal (_Ports and Adapters_) integrado a _Clean Architecture_.
 
@@ -35,7 +54,7 @@ A camada de _usecase_ aplica o fluxo de processamento da transação, inserindo 
 
 Os adaptadores se integram à aplicação atuando para comunicá-la com o mundo externo: a plataforma _Kafka_ e os bancos de dados _MySql_ e _Sqlite_.
 
-#### Aplicação Backend
+### Aplicação Backend
 
 A aplicação de _backend_ é construída com o famoso _framework_ _Node.js_: o _Nest.js_. A aplicação disponibiliza uma _API REST_ a ser consumida pelo cliente da _Gateway_ de Pagamentos (uma loja virtual, por exemplo).
 
@@ -45,7 +64,7 @@ O _Nest.js_ oferece de forma nativa diversos mecanismos para comunicação entre
 
 A aplicação conta com outro recurso para lidar com a lógica de pagamentos: a conta. Todo pagamento fica ligado a uma conta. Na tabela _Account_, há uma coluna _token_ gerando um valor padrão para cada conta. Então, no momento de criação de uma nova ordem de pagamento, é passado, no _header_ da requisição, o valor do _token_. Isso funciona como um mecanismo de autenticação também. Somente com esse _token_ (_secret_) é possível consultar as ordens de pagamento ou criar ou realizar qualquer operação. Assim, só é possível executar uma ação que esteja associada a uma conta.
 
-#### Aplicação Frontend
+### Aplicação Frontend
 
 A aplicação de _frontend_ funciona como um painel de controle e é construída a partir do _Next.js_, _framework_ _React_ que trabalha com outras estratégias de renderização, como a de _Server-Side Rendering_ (_SSR_). Por padrão, o _React_ trabalha com _Client-Side Rendering_ (_CSR_), mas isso pode gerar algumas desvantagens, como _memory leaks_, por exemplo. Não se recomenda usar _CSR_ para _SEO_ (_Search Engine Optimization_) também, porque o buscador considera que a aplicação contém uma única página: a do arquivo _HTML_.
 

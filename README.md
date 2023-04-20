@@ -318,4 +318,4 @@ Lembrando a ordem de processamento:
 1. A requisição chega no _Nest.js_;
 2. O _Nest.js_ envia pelo _Kafka_ para o processador (_Go_);
 3. O processador consome, processa e retorna pelo _Kafka_ para o _Nest.js_;
-4. O _Next.js_ fica fazendo _pulling_ a cada 2 segundos (isto é, consulta os dados no _Nest.js_) e apresenta o resultado.
+4. O _Next.js_ fica fazendo _pulling_ a cada 2 segundos (isto é, consulta os dados no _Nest.js_) e apresenta o resultado para o usuário.

@@ -4,8 +4,8 @@ O projeto consiste em:
 
 Simular o processamento em tempo real de uma _gateway_ de pagamento, aonde o cliente envia uma solicitação com os dados de uma transação para serem validados pelo sistema: se validados, a transação é aprovada, caso contrário, a transação é rejeitada.
 
-> Que problemas o projeto poderia resolver em termos de negócio?
-> O projeto pode ser adaptado para casos de uso onde é necessário visualizar o processamento de dados em tempo real. Por exemplo, em um painel de controle para o cliente final ou mesmo internamente por uma área de gestão para o controle de compras, vendas, etc.
+> Que problemas de negócio o projeto poderia resolver?
+> O projeto pode ser adaptado para casos de uso onde é necessário visualizar o processamento de dados em tempo real. Por exemplo, em um painel de controle para acompanhar a reação imediata aos pedidos de clientes, como no varejo, hotelaria e indústria de viagens.
 
 Dentro da dinâmica do sistema:
 1. Um cliente qualquer, digamos uma loja virtual, envia o pagamento para a _gateway_ de pagamento;

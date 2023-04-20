@@ -7,9 +7,13 @@ Simular o processamento em tempo real de uma _gateway_ de pagamento, aonde o cli
 > Que problemas esse projeto poderia resolver em termos de negócio?
 > O projeto pode ser aproveitado em casos de uso onde é necessário checar o processamento de dados em tempo real. Por exemplo, em um painel de controle para o cliente final ou mesmo internamente em uma área de gestão.
 
-Dentro da dinâmica do sistema, um cliente qualquer, digamos uma loja virtual, envia o pagamento para a _gateway_ de pagamento. Isso significa que uma requisição _REST_ é enviada para uma aplicação _backend_ _Node.js_, que registra as ordens de pagamento.
-
-Após registrar, a aplicação de _backend_ publica uma mensagem para o sistema de mensageria - o _Apache Kafka_. Outra aplicação _Go_, então, consome a mensagem no _Kafka_ e realiza o processamento do pagamento. O processador notifica o _backend_ via _Kafka_ para atualizar com o _status_ da transação e a aplicação de _frontend_ apresenta o resultado na tela para o usuário.
+Dentro da dinâmica do sistema:
+1. Um cliente qualquer, digamos uma loja virtual, envia o pagamento para a _gateway_ de pagamento;
+2. Uma requisição _REST_ é enviada para uma aplicação _backend_ _Nest.js_, que registra as ordens de pagamento;
+3. Após registrar, a aplicação de _backend_ publica uma mensagem para o sistema de mensageria - o _Apache Kafka_;
+4. Outra aplicação _Go_, então, consome a mensagem do _Kafka_ e realiza o processamento do pagamento;
+5. O processador notifica o _backend_ via _Kafka_ para atualizar com o _status_ da transação - Aprovado/Rejeitado;
+6. A aplicação de _frontend_ _Next.js_ apresenta o resultado na tela para o usuário.
 
 ![Fluxo da Aplicação](./images/imersao5-fullcycle.png)
 

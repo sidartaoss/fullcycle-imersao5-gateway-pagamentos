@@ -84,7 +84,7 @@ A aplicação dispõe de uma funcionalidade para prover uma experiência de temp
 
 ### Execução
 
-1. #### Criar 1 cluster Kubernetes no GCP (Google Cloud Platform)
+1. #### Criar cluster Kubernetes no GCP (Google Cloud Platform)
 
 Por que optar pelo _Google_ como _Cloud Provider_? A decisão pelo _GKE_ (_Google Kubernetes Engine_) se dá, principalmente, porque corresponde a um dos principais serviços de _Kubernetes_ na nuvem.
 

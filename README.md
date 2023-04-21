@@ -302,10 +302,6 @@ Para ver os detalhes da ordem de pagamento, basta clicar no _link_ do _ID_.
 
 9. #### Acompanhar o processamento em tempo real
 
-Ao logar no painel de controle, a aplicação redireciona para a listagem de ordens de pagamento.
-
-![Tela inicial do painel de controle](./images/tela-inicial-painel-controle.png)
-
 Enviar a requisição para criar uma nova ordem de pagamento a partir do arquivo _orders.http_:
 
 ```

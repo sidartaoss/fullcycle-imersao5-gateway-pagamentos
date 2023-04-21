@@ -21,7 +21,8 @@ Nessa dinâmica, fica claro que a responsabilidade de receber transações é se
 
 Faz parte do projeto a criação de um painel de controle, desenvolvido em _Next.js_, onde é possível acompanhar as transações sendo processadas em tempo real, ou seja, as transações chegando e mudando de _status_ automaticamente.
 
-Por se tratar de informações sensíveis referentes a uma ordem de pagamento, como garantir que esses dados não sejam perdidos? Nesse caso, opta-se pela utilização de um sistema de mensageria como estratégia de resiliência.
+#### Por se tratar de informações sensíveis referentes a uma ordem de pagamento, como garantir que esses dados não sejam perdidos?
+- Nesse caso, opta-se pela utilização de um sistema de mensageria como estratégia de resiliência.
 
 > Em termos de monitoramento, de forma a acompanhar métricas de negócio, como as transações de pagamentos, é possível fazer uso de uma solução como o _Prometheus_ vinculado ao processador _Go_, permitindo visualizar o resultado das métricas em _dashboards_ do _Grafana_.
 

@@ -4,8 +4,8 @@ O projeto consiste em:
 
 Simular o processamento em tempo real de uma _gateway_ de pagamento, aonde o cliente envia uma solicitação com os dados de uma transação para serem validados pelo sistema: se validados, a transação é aprovada, caso contrário, a transação é rejeitada.
 
-> Que problemas de negócio o projeto poderia resolver?
-> O projeto pode ser adaptado para casos de uso onde é necessário visualizar o processamento de dados em tempo real. Por exemplo, em um painel de controle para acompanhar a reação imediata aos pedidos de clientes, como no varejo, hotelaria e indústria de viagens.
+#### Que problemas de negócio o projeto poderia resolver?
+- O projeto pode ser adaptado para casos de uso onde é necessário visualizar o processamento de dados em tempo real. Por exemplo, em um painel de controle para acompanhar a reação imediata aos pedidos de clientes, como no varejo, hotelaria e indústria de viagens.
 
 Dentro da dinâmica do sistema:
 1. Um cliente qualquer, digamos uma loja virtual, envia o pagamento para a _gateway_ de pagamento;
@@ -69,11 +69,11 @@ A aplicação conta com outro recurso para lidar com a lógica de pagamentos: a 
 
 A aplicação de _frontend_ funciona como um painel de controle e é construída a partir do _Next.js_, _framework_ _React_ que trabalha com outras estratégias de renderização, como a de _Server-Side Rendering_ (_SSR_). Por padrão, o _React_ trabalha com _Client-Side Rendering_ (_CSR_), mas isso pode gerar algumas desvantagens, como _memory leaks_, por exemplo. Não se recomenda usar _CSR_ para _SEO_ (_Search Engine Optimization_) também, porque o buscador considera que a aplicação contém uma única página: a do arquivo _HTML_.
 
-Outra funcionalidade poderosa que o _Next.js_ disponibiliza são as _API Routes_.
+#### API Routes
 
-Talvez fosse necessário criar uma aplicação de _backend_ separada só para acessar recursos específicos de _backend_, como o banco de dados. Mas, com _API Routes_, não é necessário criar outra aplicação, porque a _API_ de _backend_ fica dentro da própria aplicação _React_.
+Outra funcionalidade poderosa que o _Next.js_ disponibiliza são as _API Routes_. Talvez fosse necessário criar uma aplicação de _backend_ separada só para acessar recursos específicos de _backend_, como o banco de dados. Mas, com _API Routes_, não é necessário criar outra aplicação, porque a _API_ de _backend_ fica dentro da própria aplicação _React_.
 
-> A própria aplicação Next.js, através do recurso de API Routes, pode funcionar como um Backend For Frontend (BFF), eliminando a necessidade de consumir a API de outra aplicação, diminuindo a latência da rede e melhorando a performance do sistema como um todo.
+- A própria aplicação _Next.js_, através do recurso de _API Routes_, pode funcionar como um _Backend For Frontend_ (_BFF_), eliminando a necessidade de consumir a _API_ de outra aplicação, diminuindo a latência da rede e melhorando a performance do sistema como um todo.
 
 Neste caso, funciona como um _API Gateway_: ao invés de fazer uma chamada direta para a _API_ de _backend_, a própria aplicação de _frontend_ (_Next.js_) chama sua própria _API_ que, então, envia a requisição para a aplicação de _backend_ (_Nest.js_). Dessa forma, fica tudo centralizado na própria aplicação de _frontend_, tornando possível melhorar o tratamento de erros e adicionando uma lógica própria na _API Route_. A _API Route_ de ordem de pagamento, por exemplo, extrai os dados da conta a partir de um _cookie_ que é descriptografado com o uso do _iron-session_.
 

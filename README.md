@@ -74,7 +74,7 @@ A aplicação de _frontend_ funciona como um painel de controle e é construída
 
 Outra funcionalidade poderosa que o _Next.js_ disponibiliza são as _API Routes_. Talvez fosse necessário criar uma aplicação de _backend_ separada só para acessar recursos específicos de _backend_, como o banco de dados. Mas, com _API Routes_, não é necessário criar outra aplicação, porque a _API_ de _backend_ fica dentro da própria aplicação _React_.
 
-- **A própria aplicação _Next.js_, através do recurso de _API Routes_, pode funcionar como um _Backend For Frontend_ (_BFF_), eliminando a necessidade de consumir a _API_ de outra aplicação, diminuindo a latência da rede e melhorando a _performance_ do sistema como um todo.**
+- **A própria aplicação _Next.js_, através do recurso de _API Routes_, pode funcionar como um _Backend For Frontend_ (_BFF_), eliminando a necessidade de consumir a _API_ de outra aplicação, diminuindo a latência na rede e melhorando a _performance_ do sistema como um todo.**
 - Por exemplo:
   - Uma _SPA_ (_Single Page Application_) rodando em um dispositivo móvel solicita os dados de uma ordem de pagamento. A partir de então, uma requisição bate na _API_ da aplicação _BFF_, que encaminha para a _API_ da aplicação _ACL_ (_Anti-Corruption Layer_), que atua com um adaptador para a _API_ do sistema legado. Com _API Routes_, a própria _SPA_ atua como um _BFF_ que se comunica diretamente com a aplicação _ACL_, diminuindo a chance de dupla latência na rede.
 

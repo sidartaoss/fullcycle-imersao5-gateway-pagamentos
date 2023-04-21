@@ -332,7 +332,7 @@ A ordem de pagamento é, automaticamente, atualizada com o _status_ Aprovado log
 
 ![Tela do painel de controle - status aprovado](./images/tela-aprovado-painel-controle.png)
 
-Lembrando a ordem de processamento:
+- Lembrando a ordem de processamento:
 
 1. A requisição chega no _Nest.js_;
 2. O _Nest.js_ envia pelo _Kafka_ para o processador (_Go_);

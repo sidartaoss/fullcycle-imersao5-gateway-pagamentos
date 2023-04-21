@@ -32,6 +32,7 @@ Por se tratar de informações sensíveis referentes a uma ordem de pagamento, c
   - Nest.js
   - Apache Kafka
   - Golang
+  - MySQL
   
 - #### SPA (Single Page Application)
   - TypeScript

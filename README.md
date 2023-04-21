@@ -92,7 +92,7 @@ Para fins didáticos e por se tratar de um projeto de escopo mais reduzido, é c
 
 ![Painel GCP](./images/painel-gcp.png)
 
-2. #### Criar 1 cluster Kafka na Confluent Cloud.
+2. #### Criar cluster Kafka na Confluent Cloud.
 
 Entre as opções de criação, é definido que o _cluster_ vai estar rodando no _Google Cloud_, já que o provedor do _Kubernetes_ é o próprio _Google Cloud_.
 

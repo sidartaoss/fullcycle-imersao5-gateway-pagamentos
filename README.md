@@ -69,15 +69,15 @@ A aplicação conta com outro recurso para lidar com a lógica de pagamentos: a 
 
 A aplicação de _frontend_ funciona como um painel de controle e é construída a partir do _Next.js_, _framework_ _React_ que trabalha com outras estratégias de renderização, como a de _Server-Side Rendering_ (_SSR_). Por padrão, o _React_ trabalha com _Client-Side Rendering_ (_CSR_), mas isso pode gerar algumas desvantagens, como _memory leaks_, por exemplo. Não se recomenda usar _CSR_ para _SEO_ (_Search Engine Optimization_) também, porque o buscador considera que a aplicação contém uma única página: a do arquivo _HTML_.
 
-Outra funcionalidade que o _Next.js_ oferece são as _API Routes_.
+Outra funcionalidade poderosa que o _Next.js_ disponibiliza são as _API Routes_.
 
-Talvez fosse necessário criar uma aplicação de _backend_ separada só para acessar recursos específicos de _backend_, como banco de dados. Mas, com _API Routes_, não é mais necessário, porque a _API_ de _backend_, que seria construída fora, fica dentro da própria aplicação _React_.
+Talvez fosse necessário criar uma aplicação de _backend_ separada só para acessar recursos específicos de _backend_, como o banco de dados. Mas, com _API Routes_, não é necessário criar outra aplicação, porque a _API_ de _backend_ fica dentro da própria aplicação _React_.
 
-Isso proporciona alguns benefícios, porque funciona de forma similar a um _API Gateway_: ao invés de fazer a chamada direta para a _API_ de _backend_, a própria aplicação de _frontend_ (_Next.js_) chama sua própria _API_ que, então, envia a requisição para a aplicação de _backend_ (_Nest.js_).
+> A própria aplicação Next.js, através do recurso de API Routes, pode funcionar como um Backend For Frontend (BFF), eliminando a necessidade de consumir a API de outra aplicação, diminuindo a latência da rede e melhorando a performance do sistema como um todo.
 
-Dessa forma, fica tudo centralizado na própria aplicação de _frontend_, tornando possível melhorar o tratamento de erros e adicionando uma lógica própria na _API Route_. A _API Route_ de ordem de pagamento, por exemplo, extrai os dados da conta a partir de um _cookie_ que é descriptografado com o uso do _iron-session_.
+Neste caso, funciona como um _API Gateway_: ao invés de fazer uma chamada direta para a _API_ de _backend_, a própria aplicação de _frontend_ (_Next.js_) chama sua própria _API_ que, então, envia a requisição para a aplicação de _backend_ (_Nest.js_). Dessa forma, fica tudo centralizado na própria aplicação de _frontend_, tornando possível melhorar o tratamento de erros e adicionando uma lógica própria na _API Route_. A _API Route_ de ordem de pagamento, por exemplo, extrai os dados da conta a partir de um _cookie_ que é descriptografado com o uso do _iron-session_.
 
-> Apenas como nota, o _iron-session_ é um utilitário de sessão _stateless_ do _NodeJS_ que utiliza _cookies_ assinados e criptografados para armazenar dados.
+> O _iron-session_ é um utilitário de sessão _stateless_ do _NodeJS_ que utiliza _cookies_ assinados e criptografados para armazenar dados.
 
 Caso os dados da conta não sejam válidos, significa que o usuário não está autenticado - ele é, então, redirecionado para a página de _login_. Mas, caso os dados sejam válidos, a aplicação segue fazendo a requisição para a _API_ _Nest.js_, passando o _token_ extraído a partir do _cookie_.
 

@@ -50,9 +50,10 @@ Faz parte do projeto a criação de um painel de controle, desenvolvido em _Next
 
 A aplicação responsável pelo processamento das transações é desenvolvida em _Go_. E adota conceitos de _design_ de Arquitetura Hexagonal (_Ports and Adapters_) e _Clean Architecture_. Basicamente, isso consiste em:
 
-1. :arrow_right: **Trabalhar com um _design_ focado em solucionar o problema do domínio;**
-2. :arrow_right: **Deixar a complexidade técnica para a camada de adaptadores, responsável pelo sistema de _stream_ (_Kafka_) e bancos de dados (_MySQL/SQLite_);**
-3. :arrow_right: **Permanecer flexível para a implementação de outros formatos de comunicação (_API REST_, _gRPC_, _GraphQL_, etc.), sem alterar nenhum outro componente da aplicação ou o modelo de domínio.**
+1. :arrow_right: **Trabalhar com um _design_ focado em solucionar o problema do domínio.** Vamos ter uma camada de domínio responsável por resolver a complexidade do negócio; 
+2. :arrow_right: **Deixar a complexidade técnica para uma camada de adaptadores**, que vai ser responsável por resolver o sistema de _stream_ (_Kafka_) e bancos de dados (_MySQL/SQLite_);
+
+- Isso vai permitir adicionar futuramente à aplicação um client para _REST_, _gRPC_, _CLI_, etc., sem precisar alterar nenhum outro componente da aplicação ou o modelo de domínio.
 
 A camada de domínio envolve algumas regras universais, que compreendem, por exemplo: valor mínimo e máximo de cada transação e validação dos dados do cartão de crédito.
 

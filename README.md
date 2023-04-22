@@ -51,14 +51,14 @@ Faz parte do projeto a criação de um painel de controle, desenvolvido em _Next
 A aplicação responsável pelo processamento das transações é desenvolvida em _Go_. E adota um _design_ de Arquitetura Hexagonal (_Ports and Adapters_) integrado com _Clean Architecture_. Basicamente, consiste em:
 
 1. :arrow_right: **Trabalhar com um _design_ focado em solucionar o problema do domínio;**
-2. :arrow_right: **Deixar a complexidade técnica para os adaptadores, responsáveis pelo sistema de _stream_ (_Kafka_) e banco de dados (_MySQL/SQLite_);**
+2. :arrow_right: **Deixar a complexidade técnica para a camada de adaptadores, responsável pelo sistema de _stream_ (_Kafka_) e bancos de dados (_MySQL/SQLite_);**
 3. :arrow_right: **Permanecer flexível para a implementação de outros formatos de comunicação (_API REST_, _gRPC_, _GraphQL_, etc.), sem alterar nenhum outro componente da aplicação ou o modelo de domínio.**
 
 A camada de domínio envolve algumas regras universais, que compreendem, por exemplo: valor mínimo e máximo de cada transação e validação dos dados do cartão de crédito.
 
 A camada de _usecase_ aplica o fluxo de processamento da transação, inserindo os dados no banco de dados e publicando uma mensagem no tópico do _Kafka_ nos casos de transação aprovada e rejeitada.
 
-Os adaptadores se integram à aplicação atuando para comunicá-la com o mundo externo: a plataforma _Kafka_ e os bancos de dados _MySql_ e _Sqlite_.
+Os adaptadores fazem a comunicação da aplicação com o mundo externo: plataforma _Kafka_ e bancos de dados _MySql_ e _Sqlite_.
 
 ### Aplicação Backend
 

@@ -53,7 +53,7 @@ A aplicação responsável pelo processamento das transações é desenvolvida e
 1. :arrow_right: **Trabalhar com um _design_ focado em solucionar o problema do domínio.** Vamos ter uma camada de domínio responsável por resolver a complexidade do negócio; 
 2. :arrow_right: **Deixar a complexidade técnica para uma camada de adaptadores**, que vai ser responsável por resolver o sistema de _stream_ (_Kafka_) e bancos de dados (_MySQL/SQLite_);
 
-- Isso vai permitir adicionar futuramente à aplicação um client para _REST_, _gRPC_, _CLI_, etc., sem precisar alterar nenhum outro componente da aplicação ou o modelo de domínio.
+- Isso vai permitir adicionar futuramente à aplicação um _client_ para _REST_, _gRPC_, _CLI_, etc., sem precisar alterar nenhum outro componente da aplicação ou o modelo de domínio.
 
 A camada de domínio envolve algumas regras universais, que compreendem, por exemplo: valor mínimo e máximo de cada transação e validação dos dados do cartão de crédito.
 

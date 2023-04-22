@@ -48,7 +48,11 @@ Faz parte do projeto a criação de um painel de controle, desenvolvido em _Next
 
 ### Processador de Transações
 
-A aplicação responsável pelo processamento das transações é desenvolvida em _Go_. E adota um _design_ de Arquitetura Hexagonal (_Ports and Adapters_) integrado a _Clean Architecture_.
+A aplicação responsável pelo processamento das transações é desenvolvida em _Go_. E adota um _design_ de Arquitetura Hexagonal (_Ports and Adapters_) integrado a _Clean Architecture_. Basicamente, consiste em:
+
+- **Trabalhar com um _design_ focado em solucionar o problema do domínio;**
+- **Deixar a complexidade técnica para os adaptadores, responsáveis pelo sistema de _stream_ (_Kafka_) e banco de dados (_MySQL/SQLite_);**
+- **Permanecer flexível para a implementação de outros formatos de comunicação, como _API REST_, _gRPC_, _GraphQL_, etc., sem alterar nenhum outro componente da aplicação ou o modelo de domínio.**
 
 A camada de domínio envolve algumas regras universais, que compreendem, por exemplo: valor mínimo e máximo de cada transação e validação dos dados do cartão de crédito.
 

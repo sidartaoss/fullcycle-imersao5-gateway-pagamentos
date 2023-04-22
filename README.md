@@ -21,10 +21,16 @@ Nessa dinâmica, fica claro que a responsabilidade de receber transações é se
 
 Faz parte do projeto a criação de um painel de controle, desenvolvido em _Next.js_, onde é possível acompanhar as transações sendo processadas em tempo real, ou seja, as transações chegando e mudando de _status_ automaticamente.
 
-#### Por se tratar de informações sensíveis referentes a uma ordem de pagamento, como garantir que esses dados não sejam perdidos?
-- Nesse caso, opta-se pela utilização de um sistema de mensageria como estratégia de resiliência.
+> Perda de dados
+- #### Os dados de um pagamento não podem ser perdidos durante a requisição. Como garantir que esses dados não sejam perdidos?
 
-> Em termos de monitoramento, de forma a acompanhar métricas de negócio, como as transações de pagamentos, é possível fazer uso de uma solução como o _Prometheus_ vinculado ao processador _Go_, permitindo visualizar o resultado das métricas em _dashboards_ do _Grafana_.
+  - Nesse caso, é utilizado um sistema de mensageria como estratégia de resiliência.
+
+> Monitoramento
+
+- #### Como acompanhar as métricas de negócio?
+
+    - Para acompanhar as métricas de negócio, como as transações de pagamentos, recomenda-se uma solução como o _Prometheus_ vinculado ao processador _Go_, que permite visualizar o resultado das métricas em _dashboards_ com o _Grafana_.
 
 ## Tecnologias
   
@@ -48,12 +54,21 @@ Faz parte do projeto a criação de um painel de controle, desenvolvido em _Next
 
 ### Processador de Transações
 
-A aplicação responsável pelo processamento das transações é desenvolvida em _Go_. E adota conceitos de _design_ de Arquitetura Hexagonal (_Ports and Adapters_) e _Clean Architecture_. Basicamente, isso consiste em:
+A aplicação responsável pelo processamento das transações é desenvolvida em _Go_. E adota conceitos de _design_ de Arquitetura Hexagonal (_Ports and Adapters_) e _Clean Architecture_.
 
-1. :arrow_right: **Trabalhar com um _design_ focado em solucionar o problema do domínio.** Vamos ter uma camada de domínio responsável por resolver a complexidade do negócio; 
-2. :arrow_right: **Deixar a complexidade técnica para uma camada de adaptadores**, que vai ser responsável por resolver o sistema de _stream_ (_Kafka_) e bancos de dados (_MySQL/SQLite_);
+> Arquitetura Hexagonal & Clean Architecture
 
-- Isso vai permitir adicionar à aplicação, por exemplo, outros formatos de comunicação (_REST_, _gRPC_, _GraphQL_, _CLI_, etc.), sem precisar alterar nenhum outro componente da aplicação ou o modelo de domínio.
+- Permite:
+
+  - #### Trabalhar com um _design_ focado em solucionar o problema do domínio;
+
+    - Vamos ter uma camada de domínio responsável por resolver a complexidade do negócio;
+  
+  - #### Deixar a complexidade técnica para uma camada de aplicação;
+
+    - Vamos ter uma camada de aplicação responsável por resolver o sistema de _stream_ (_Kafka_) e bancos de dados (_MySQL/SQLite_);
+
+- Isso vai possibilitar, por exemplo, adicionar outros formatos de comunicação (_REST_, _gRPC_, _GraphQL_, _CLI_, etc.), sem precisar alterar nenhum outro componente da aplicação ou o modelo de domínio.
 
 A camada de domínio envolve algumas regras universais, que compreendem, por exemplo: valor mínimo e máximo de cada transação e validação dos dados do cartão de crédito.
 

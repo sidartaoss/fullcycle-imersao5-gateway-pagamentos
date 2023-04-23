@@ -22,7 +22,7 @@ Nessa dinâmica, fica claro que a responsabilidade de receber transações é se
 Faz parte do projeto a criação de um painel de controle, desenvolvido em _Next.js_, onde é possível acompanhar as transações sendo processadas em tempo real, ou seja, as transações chegando e mudando de _status_ automaticamente.
 
 > Perda de dados
-- #### Os dados de pagamento não podem ser perdidos durante a requisição. Como garantir que não sejam perdidos?
+- #### Os dados de pagamento não podem ser perdidos durante a requisição. Como garantir que não haja perda de dados?
 
   - Nesse caso, é utilizado um sistema de mensageria como estratégia de resiliência.
 

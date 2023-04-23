@@ -56,7 +56,7 @@ Faz parte do projeto a criação de um painel de controle, desenvolvido em _Next
 
 A aplicação responsável pelo processamento das transações é desenvolvida em _Go_. E adota conceitos de _design_ de Arquitetura Hexagonal (_Ports and Adapters_) e _Clean Architecture_.
 
-> Arquitetura Hexagonal & Clean Architecture
+> Arquitetura Hexagonal / _Clean Architecture_
 
 - Permite:
 
@@ -68,7 +68,9 @@ A aplicação responsável pelo processamento das transações é desenvolvida e
 
     - Vamos ter uma camada de aplicação responsável por resolver o sistema de _stream_ (_Kafka_) e bancos de dados (_MySQL/SQLite_);
 
-- Isso vai possibilitar, por exemplo, adicionar outros formatos de comunicação (_REST_, _gRPC_, _GraphQL_, _CLI_, etc.), sem precisar alterar nenhum outro componente da aplicação ou o modelo de domínio.
+- Com isso:
+
+    - A  aplicação torna-se flexível para adicionar/remover componentes de infraestrutura sem precisar alterar nenhum outro componente da aplicação ou o modelo de domínio;
 
 A camada de domínio envolve algumas regras universais, que compreendem, por exemplo: valor mínimo e máximo de cada transação e validação dos dados do cartão de crédito.
 

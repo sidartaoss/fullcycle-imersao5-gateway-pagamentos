@@ -68,7 +68,7 @@ A aplicação responsável pelo processamento das transações é desenvolvida e
 
 - Com isso:
 
-    - A  aplicação torna-se flexível para adicionar/remover componentes de infraestrutura sem precisar alterar nenhum outro componente da aplicação ou o modelo de domínio;
+    - A  aplicação torna-se flexível para adicionar/remover componentes de infraestrutura sem precisar alterar _nenhum_ outro componente da aplicação ou o modelo de domínio;
 
 A camada de domínio envolve algumas regras universais, que compreendem, por exemplo: valor mínimo e máximo de cada transação e validação dos dados do cartão de crédito.
 

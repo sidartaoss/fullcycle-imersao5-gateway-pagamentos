@@ -58,13 +58,11 @@ A aplicação responsável pelo processamento das transações é desenvolvida e
 
 > Arquitetura Hexagonal / _Clean Architecture_
 
-- Permite:
-
-  - #### Trabalhar com um _design_ focado em solucionar o problema do domínio;
+  - #### Permite trabalhar com um _design_ focado em solucionar o problema do domínio;
 
     - Vamos ter uma camada de domínio responsável por resolver a complexidade do negócio;
   
-  - #### Deixar a complexidade técnica para uma camada de aplicação;
+  - #### Permite deixar a complexidade técnica para ser resolvida por uma camada de aplicação;
 
     - Vamos ter uma camada de aplicação responsável por resolver o sistema de _stream_ (_Kafka_) e bancos de dados (_MySQL/SQLite_);
 
@@ -76,7 +74,7 @@ A camada de domínio envolve algumas regras universais, que compreendem, por exe
 
 A camada de _usecase_ aplica o fluxo de processamento da transação, inserindo os dados no banco de dados e publicando uma mensagem no tópico do _Kafka_ nos casos de transação aprovada e rejeitada.
 
-Os adaptadores fazem a comunicação da aplicação com o mundo externo: plataforma _Kafka_ e bancos de dados _MySql_ e _Sqlite_.
+Os adaptadores fazem a comunicação da aplicação com o mundo externo: plataforma _Kafka_ e bancos de dados _MySQL_ e _SQLite_.
 
 ### Aplicação Backend
 

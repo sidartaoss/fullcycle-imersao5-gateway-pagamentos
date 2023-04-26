@@ -343,12 +343,12 @@ Content-Type: application/json
 x-token: hvc2yoabori
 
 {
-    "credit_card_number": "5268185503303427",
-    "credit_card_name": "Iris Marks",
+    "credit_card_number": "5220550801166155",
+    "credit_card_name": "Alejandro Konopelski",
     "credit_card_expiration_month": 8,
     "credit_card_expiration_year": 2027,
     "credit_card_cvv": 228,
-    "amount": 884.93
+    "amount": 779.23
 }
 ```
 

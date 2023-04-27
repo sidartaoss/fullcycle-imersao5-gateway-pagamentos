@@ -54,9 +54,11 @@ Faz parte do projeto a criação de um painel de controle, desenvolvido em _Next
 
 ### Processador de Transações Go
 
-A aplicação responsável pelo processamento das transações é desenvolvida em _Go_. E adota conceitos de _design_ de Arquitetura Hexagonal (_Ports and Adapters_) e _Clean Architecture_.
+A aplicação responsável pelo processamento das transações é desenvolvida em _Go_. E adota conceitos de _design_ de:
 
-> Arquitetura Hexagonal / _Clean Architecture_
+> Arquitetura Hexagonal (_Ports and Adapters_)
+
+> _Clean Architecture_
 
   - #### Permite trabalhar com um _design_ focado em solucionar o problema do domínio;
 
@@ -66,9 +68,13 @@ A aplicação responsável pelo processamento das transações é desenvolvida e
 
     - Vamos ter uma camada de aplicação responsável por resolver o sistema de _stream_ (_Kafka_) e bancos de dados (_MySQL/SQLite_);
 
-- Com isso:
+  - Com isso:
 
-    - A  aplicação torna-se flexível para adicionar/remover componentes de infraestrutura sem precisar alterar _nenhum_ outro componente da aplicação ou o modelo de domínio;
+    - #### A  aplicação torna-se flexível para adicionar/remover componentes de infraestrutura sem precisar alterar _nenhum_ outro componente da aplicação ou o modelo de domínio;
+      
+      > 12 Fatores
+      
+        - Trata-se do mesmo objetivo proposto na metodologia dos 12 fatores. O fator 4 recomenda tratar serviços de apoio como recursos anexados. Basicamente, deveria ser possível anexar/desanexar qualquer serviço local ou de terceiros, como o banco de dados, sem realizar quaisquer mudanças no código da aplicação.
 
 A camada de domínio envolve algumas regras universais, que compreendem, por exemplo: valor mínimo e máximo de cada transação e validação dos dados do cartão de crédito.
 

@@ -74,7 +74,7 @@ A aplicação responsável pelo processamento das transações é desenvolvida e
       
       > 12 Fatores
       
-        - Trata-se do mesmo objetivo proposto na metodologia dos 12 fatores. O fator 4 recomenda tratar serviços de apoio como recursos anexados. Basicamente, deveria ser possível anexar/desanexar qualquer serviço local ou de terceiros, como o banco de dados, sem realizar quaisquer mudanças no código da aplicação.
+        - Trata-se do mesmo objetivo a ser alcançado pelo fator 4 da metodologia dos 12 fatores. Esse fator recomenda tratar serviços de apoio como recursos anexados. Basicamente, deveria ser possível anexar/desanexar qualquer serviço local ou de terceiros, como o banco de dados, sem realizar quaisquer mudanças no código da aplicação.
 
 A camada de domínio envolve algumas regras universais, que compreendem, por exemplo: valor mínimo e máximo de cada transação e validação dos dados do cartão de crédito.
 
